@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TheNotes.Models.Note>
+
+@{
+    ViewBag.Title = "Index";
+}
+@if (Session["name"] != null)
+            {
+                <h2>@Session["name"] Notes</h2>
+            }
+ 
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tittle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desc)
+        </th>
+        
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    int i = 0;
+    
+    
+     
+    <tr>
+        <td>
+             @i++;
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tittle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+         
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nid }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.nid })
+        </td>
+    </tr>
+}
+
+</table>

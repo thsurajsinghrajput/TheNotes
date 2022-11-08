@@ -1,0 +1,17 @@
+﻿create database TheNotes;
+CREATE TABLE [dbo].[Notes] (
+    [nid]    INT          IDENTITY (1, 1) NOT NULL,
+    [tittle] VARCHAR (50) NOT NULL,
+    [desc]   VARCHAR (50) NOT NULL,
+    [uid]    INT          NOT NULL,
+    PRIMARY KEY CLUSTERED ([nid] ASC)
+);
+
+CREATE TABLE [dbo].[Table] (
+    [uid]    INT          IDENTITY (1, 1) NOT NULL,
+    [name]   VARCHAR (50) NOT NULL,
+    [mobile] BIGINT       NOT NULL,
+    [pass]   VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([uid] ASC)
+);
+
